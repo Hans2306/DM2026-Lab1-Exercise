@@ -15,7 +15,7 @@ from IPython.display import display
 from .llm_backends import get_api_keys
 
 
-def select_backend(valid_backends=("groq", "gemini")):
+def select_backend(valid_backends=("groq", "gemini"), student_name="", student_id=""):
     """Displays a name field, a student ID field, a backend dropdown, a
     fallback checkbox, and a Confirm button. Returns a plain dict, empty
     until the student fills in both identifiers, picks a backend, and
@@ -36,8 +36,8 @@ def select_backend(valid_backends=("groq", "gemini")):
     students without depending on how each file happens to be named."""
     choice = {}
 
-    name_input = widgets.Text(placeholder="Your name, as it should appear on the submission", description="Name:")
-    id_input = widgets.Text(placeholder="Your student ID", description="Student ID:")
+    name_input = widgets.Text(value=student_name, placeholder="Your name, as it should appear on the submission", description="Name:")
+    id_input = widgets.Text(value=student_id, placeholder="Your student ID", description="Student ID:")
     backend_dropdown = widgets.Dropdown(options=valid_backends, description="Backend:")
     fallback_checkbox = widgets.Checkbox(value=False, description="Enable multi-provider fallback")
     confirm_button = widgets.Button(description="Confirm", button_style="primary")
