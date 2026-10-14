@@ -1,0 +1,9 @@
+Term Freq Filtering Summary
+======================================================================
+
+Category                         Original   Filtered    Removed
+======================================================================
+comp.graphics                       13480      12830        650
+soc.religion.christian              13576      12916        660
+sci.med                             15964      15170        794
+alt.atheism                         11676      11105        571

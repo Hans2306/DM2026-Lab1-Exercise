@@ -1,0 +1,9 @@
+Variance Filtering Summary
+======================================================================
+
+Category                         Original   Filtered    Removed
+======================================================================
+comp.graphics                       13480      12165       1315
+soc.religion.christian              13576      12245       1331
+sci.med                             15964      14929       1035
+alt.atheism                         11676      10544       1132

@@ -1,58 +1,46 @@
-# Ignore directories
-./output_files/processed_dataframes/
+# API keys and local environment configuration
+.env
+.env.*
+!.env.example
 
-# Ignore virtual environment
-.venv/
-
-# Ignore Jupyter notebook checkpoints
-.ipynb_checkpoints/
-
-# Ignore VS Code settings
-.vscode/
-
-# Ignore text files
-*.txt
-# ...except the pip-install fallback
-!requirements.txt
-
-# Ignore CSV files
-*.csv
-# ...except the known-answer test fixture referenced by exact path
-# throughout agent_dev/TEST_FIXTURE.md and prompts.py -- this one is
-# course source, not a dataset or generated output.
-!agent_dev/sample_fixture.csv
-# ...and the Homework dataset, which students need in the repo.
-!newdataset/Reddit-stock-sentiment.csv
-
-# Ignore compiled Python bytecode
-__pycache__/
-*.pyc
-
-# One-off notebook refactoring scripts (maintainer use)
-temp_scripts/
-
-# Agentic pipeline: secrets
-config/.env
-# Grading keys -- only the public half is committed; every student's
-# notebook needs it to encrypt their session log.
-# NEVER commit the private key.
+# Keep the public grading key; never upload private grading keys.
 agent_pipeline/keys/*
 !agent_pipeline/keys/grading_public_key.pem
 
-# Agent-dev track: each student's in-progress workspace is generated
-# content, not course source.
-agent_dev_workspace/
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
-# All three notebooks (agent-dev, agentic-pipeline, homework) save into
-# these shared folders now -- one encrypted log file, any saved plots,
-# and (agentic-pipeline/homework only) an exported report, each
-# distinguished by filename rather than by directory.
-session_logs/*.jsonl
-session_logs/*.jsonl.enc
-plots/*.png
-reports/*.md
+# Jupyter and editor state
+.ipynb_checkpoints/
+.vscode/
+.idea/
 
-# Local Anaconda Navigator tooling state, not course content -- created
-# automatically when this folder is opened as a project through
-# Anaconda's UI, machine-specific, never meant to be committed.
+# macOS and temporary Word files
+.DS_Store
+._*
+~$*
+
+# Local generated caches and maintenance files
+output_files/processed_dataframes/
 anaconda_projects/
+temp_scripts/
+
+# Raw logs and submission archives (encrypted logs remain included)
+session_logs/*.jsonl
+*.zip
+
+# Generated Master intermediate CSV files
+output_files/**/*.csv
+
+# Required submission files are deliberately NOT ignored:
+# agent_dev_workspace/  (tools and tests)
+# session_logs/*.jsonl.enc
+# reports/*.md
+# plots/*.png
+# Notebooks, Master answers, course data, and requirements.txt

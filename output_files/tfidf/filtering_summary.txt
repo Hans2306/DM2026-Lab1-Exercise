@@ -1,0 +1,9 @@
+Tfidf Filtering Summary
+======================================================================
+
+Category                         Original   Filtered    Removed
+======================================================================
+comp.graphics                       13480      10858       2622
+soc.religion.christian              13576      10861       2715
+sci.med                             15964      12807       3157
+alt.atheism                         11676       9341       2335
